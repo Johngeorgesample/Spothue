@@ -2,7 +2,7 @@
 import os
 
 writeFileCmd = """osascript -e 'set albumID to "ALBUM ID HERE" 
-				 set textFile to "/Users/johngeorgesample/Desktop/albumIdLog.txt"
+				 set textFile to "/Users/johngeorgesample/Documents/Development/Git/Spothue/albumIdLog.txt"
 
 				 do shell script "echo  " & quoted form of albumID & " >  " & quoted form of textFile'"""
 
