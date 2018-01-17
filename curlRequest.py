@@ -1,10 +1,14 @@
 import requests
 
 headers = {
-	'Authorization': 'Bearer BQCoyqhhoM1EwMfJwfsU7h5fVWnJjA4seaiHFRriLveqIL_V2Rl2Ym68oLyuWIv6Z0FugqmuNyvRCT_WWtByEvjZYH5MSkg12t8_7VE-3HCPuXJpPq5btqOqjbAoyQ0kLXdTon-EvSrQPLHuV9kNdOY',
+	'Authorization': 'Bearer BQCu5U6vGrVSkOwHAwtnSd0f89JGdf-PIeT_obKB7SspgaBOcvukGi08qTxR5O2dENt3yvsa92uOKrfbTaAHB36bfkk4OzaCaz2-DwXGcye9X1Pu4Qd1wf1iubHwCPJrJmw0H5Yw7U3g4-LTmiJc07Q',
 }
 
-response = requests.get('https://api.spotify.com/v1/tracks/' + '0pVaTi1RHV9lUZJ12ciS7P', headers=headers)
+f = open("songIdLog.txt", "r")
+spotify,track,mySong=str.split(f.read().strip()	, ':')
+f.close()
 
-print(response.json())
+response = requests.get("https://api.spotify.com/v1/tracks/" + str(mySong), headers=headers)
+
+print(response.text)
 
