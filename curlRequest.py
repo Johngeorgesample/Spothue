@@ -1,7 +1,8 @@
 import requests
+import json
 
 headers = {
-	'Authorization': 'Bearer BQCu5U6vGrVSkOwHAwtnSd0f89JGdf-PIeT_obKB7SspgaBOcvukGi08qTxR5O2dENt3yvsa92uOKrfbTaAHB36bfkk4OzaCaz2-DwXGcye9X1Pu4Qd1wf1iubHwCPJrJmw0H5Yw7U3g4-LTmiJc07Q',
+	'Authorization': 'Bearer BQDK_np0oVsRnbJ74abgU3WTPw6vdMqfKnsJ7ZtX2sQu_CKtlGbGiZtOKapbpYTNDcvQQ96xqebJZH9y8YO8cAnxE1aEL0StxPuS5lO5NGtQlKdDm5Vos3uaTr_ljBwot4U9Pd0p_R23RY0SBr9ZSK0',
 }
 
 f = open("songIdLog.txt", "r")
@@ -12,3 +13,6 @@ response = requests.get("https://api.spotify.com/v1/tracks/" + str(mySong), head
 
 print(response.text)
 
+payload = open("payload.txt","w")
+payload.write(response.text)
+payload.close()
