@@ -5,6 +5,7 @@ Application that matches Philips Hue lights to the most dominant colors of Spoti
 ## What It Does
 In its current state, Spothue can:
 * save current song's id to text file
+* receive Spotify API payload
 
 ## Setup
 1. Change textFile path to your preferred location
