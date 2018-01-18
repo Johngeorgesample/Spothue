@@ -1,8 +1,10 @@
 import requests
 import json
+from flask import Flask
+app = Flask(__name__)
 
 headers = {
-	'Authorization': 'Bearer BQDK_np0oVsRnbJ74abgU3WTPw6vdMqfKnsJ7ZtX2sQu_CKtlGbGiZtOKapbpYTNDcvQQ96xqebJZH9y8YO8cAnxE1aEL0StxPuS5lO5NGtQlKdDm5Vos3uaTr_ljBwot4U9Pd0p_R23RY0SBr9ZSK0',
+	'Authorization': 'Bearer BQCexT97lzpAaF_AQCkRKeayaBbU1sQ2M8SjbURjXIbexI05mebma4JLbTtIULrh2OnqeLdEicVJSPE5iCovGG_1V1vpA6_JFQtdEq13HwyKRFacPAzXdrhrqZbHZQr_iqJVAnGm6OpBTr1g0Bz_nXo',
 }
 
 f = open("songIdLog.txt", "r")
@@ -16,3 +18,7 @@ print(response.text)
 payload = open("payload.txt","w")
 payload.write(response.text)
 payload.close()
+
+@app.route('/')
+def index():
+	return response.text
