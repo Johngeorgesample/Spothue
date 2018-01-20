@@ -1,10 +1,13 @@
 import requests
 import json
 from flask import Flask
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
+
 
 headers = {
-	'Authorization': 'Bearer BQCexT97lzpAaF_AQCkRKeayaBbU1sQ2M8SjbURjXIbexI05mebma4JLbTtIULrh2OnqeLdEicVJSPE5iCovGG_1V1vpA6_JFQtdEq13HwyKRFacPAzXdrhrqZbHZQr_iqJVAnGm6OpBTr1g0Bz_nXo',
+	'Authorization': 'Bearer BQCCCP-FEoYTcs36pM8vsbyypBQ_8TWF-7LtgIxqpg914CxCBEbnX30ZbA5Jq0NcMzhlHtgOs85whBaABmDUaAaxSiP4GNkIcMcSm9fOg_HaBETjXVtNGmqTcrXw1ZKn45vmIS0tv45DjhbI7deZyk4',
 }
 
 f = open("songIdLog.txt", "r")
