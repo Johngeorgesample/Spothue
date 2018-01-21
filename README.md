@@ -11,7 +11,7 @@ This project requires Flask. You can install it via the following command:
 $ pip install Flask
 ```
 
-### Installing
+### Running
 
 1. Change textFile path in `createLog.applescript` to your preferred location
 2. Compile `createLog.applescript`
