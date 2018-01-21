@@ -1,20 +1,38 @@
 # Spothue
 
-Application that matches Philips Hue lights to the most dominant colors of Spotify's current song album art.
+Program that matches Philips Hue lights to the most dominant colors of Spotify's current song album art.
 
-## What It Does
-In its current state, Spothue can:
-* save current song's id to text file
-* receive Spotify API payload
-* write payload to local webserver using [Flask](http://flask.pocoo.org/)
-* display current song's album art in browser
+## Getting Started
+### Prerequisites
 
-## Usage
+This project requires Flask. You can install it via the following command:
+
+```
+$ pip install Flask
+```
+
+### Installing
+
 1. Change textFile path in `createLog.applescript` to your preferred location
 2. Compile `createLog.applescript`
 3. Generate temporary bearer token [from Spotify's API console](https://developer.spotify.com/web-api/console/get-track/) and add it to headers in `curlRequest.py`
-4. Start Flask server `export FLASK_APP=curlRequest.py` then `flask run`
+4. Start Flask server 
+
+```
+export FLASK_APP=curlRequest.py
+```
+then 
+```
+flask run
+```
+
 5. Open `coverArt.html` to see current song's album art
 
-## Todo
+## License
 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* [Flask](http://flask.pocoo.org/)
+* [Color-Thief](https://github.com/lokesh/color-thief)
