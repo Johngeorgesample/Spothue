@@ -7,7 +7,7 @@ CORS(app)
 
 
 headers = {
-	'Authorization': 'Bearer BQB_TASql8DQvfQjSGlvjXFrSJB18mhq2DPbng3Chllwd6WhPiGygyvp37BkzUbB1yJmB2I8Y9zLaFIxoapOQFvJSQuJUDOHswEq2oVFmU6ZSjkNDnz0y5DXQlbj-r_7AmmkjHMfgjA7uTrsSF_7-gY',
+	'Authorization': 'Bearer BQA_6Zainw7AMR8OTGlODlAlYiNvLTdz7MyPfUU507PuEtxYB3wDHveJ7GGe_qkBOGT7_GG9om7dc_U0NmF_bXN3Wgoax7Mv5gSp1mX5fihJ58O9_p1u0Nuc4frU9EM9sOJ0FrkkIqwK2HdEd0645es',
 }
 
 f = open("songIdLog.txt", "r")

@@ -27,6 +27,28 @@ function(err, data) {
     img.onload = function () {
       var colorThief = new ColorThief();
       console.log(colorThief.getPalette(img, 4)); //4 = number of colors to return
+
+      //---
+      var r = colorThief.getPalette(img, 4)[0][0];
+      var g = colorThief.getPalette(img, 4)[0][1];
+      var b = colorThief.getPalette(img, 4)[0][2];
+      document.getElementById('color-one').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+      var r = colorThief.getPalette(img, 4)[1][0];
+      var g = colorThief.getPalette(img, 4)[1][1];
+      var b = colorThief.getPalette(img, 4)[1][2];
+      document.getElementById('color-two').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+      var r = colorThief.getPalette(img, 4)[2][0];
+      var g = colorThief.getPalette(img, 4)[2][1];
+      var b = colorThief.getPalette(img, 4)[2][2];
+      document.getElementById('color-three').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+      var r = colorThief.getPalette(img, 4)[3][0];
+      var g = colorThief.getPalette(img, 4)[3][1];
+      var b = colorThief.getPalette(img, 4)[3][2];
+      document.getElementById('color-four').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+     
     };
     img.crossOrigin = 'Anonymous';
     img.src = document.getElementById('myImg').src;
