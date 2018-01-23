@@ -1,3 +1,5 @@
+![Spothue logo](http://johngeorgesample.com/documents/images/spothue.png)
+
 # Spothue
 
 Program that matches Philips Hue lights to the most dominant colors of Spotify's current song album art.
