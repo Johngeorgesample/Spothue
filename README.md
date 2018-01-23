@@ -14,22 +14,9 @@ $ pip install Flask
 ### Running
 
 1. Change textFile path in `createLog.applescript` to your preferred location
-2. Run the command
-```
-osascript createLog.applescript
-```
-3. Generate temporary bearer token [from Spotify's API console](https://developer.spotify.com/web-api/console/get-track/) and add it to headers in `curlRequest.py`
-4. Start Flask server 
-
-```
-export FLASK_APP=curlRequest.py
-```
-then 
-```
-flask run
-```
-
-5. Open `coverArt.html` to see current song's album art
+2. Generate temporary bearer token [from Spotify's API console](https://developer.spotify.com/web-api/console/get-track/) and add it to headers in `curlRequest.py`
+3. Run the `scriptRunner.sh` script to generate song ID, receive JSON payload, and start flask server
+4. Open `coverArt.html` to see current song's album art with 4 most dominant colors
 
 ## License
 
