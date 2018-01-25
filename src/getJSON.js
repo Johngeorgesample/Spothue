@@ -21,7 +21,7 @@ function(err, data) {
   } 
   else {
     console.log(data.album.images[0].url);
-    document.getElementById('myImg').src=data.album.images[0].url;
+    document.getElementById('myImg').src=data.album.images[1].url;
 
     var img = new Image();
     img.onload = function () {
