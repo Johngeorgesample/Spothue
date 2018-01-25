@@ -28,3 +28,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * [Flask](http://flask.pocoo.org/)
 * [Color-Thief](https://github.com/lokesh/color-thief)
+* [cie-rgb-converter](https://github.com/usolved/cie-rgb-converter)
