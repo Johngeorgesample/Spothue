@@ -34,23 +34,37 @@ function(err, data) {
       var b = colorThief.getPalette(img, 4)[0][2];
       document.getElementById('color-one').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
+      console.log("color-one xy: " + rgb_to_cie(r, g, b));
+
       var r = colorThief.getPalette(img, 4)[1][0];
       var g = colorThief.getPalette(img, 4)[1][1];
       var b = colorThief.getPalette(img, 4)[1][2];
       document.getElementById('color-two').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+      console.log("color-two xy: " + rgb_to_cie(r, g, b));
 
       var r = colorThief.getPalette(img, 4)[2][0];
       var g = colorThief.getPalette(img, 4)[2][1];
       var b = colorThief.getPalette(img, 4)[2][2];
       document.getElementById('color-three').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
+      console.log("color-three xy: " + rgb_to_cie(r, g, b));
+
       var r = colorThief.getPalette(img, 4)[3][0];
       var g = colorThief.getPalette(img, 4)[3][1];
       var b = colorThief.getPalette(img, 4)[3][2];
       document.getElementById('color-four').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+      console.log("color-four xy: " + rgb_to_cie(r, g, b));
      
     };
     img.crossOrigin = 'Anonymous';
     img.src = document.getElementById('myImg').src;
   }
 });
+
+function setLamp() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "192.168.1.181/api/dNREFp86Y2mbL06YSvRid-cW7yPflV2Y2trx5s9q/lights", true);
+  xhr.send();
+}

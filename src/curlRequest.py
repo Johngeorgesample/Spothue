@@ -7,7 +7,7 @@ CORS(app)
 
 
 headers = {
-	'Authorization': 'Bearer BQDw3tWKUI-eIRPnRYO9hQ4zFmLq0BZVutYiTlI0DbTQzsfSOUo2tliqkIDKt4ThyJkDVNiMb0SwlgTUFa7-HEuJB820KdhsycdzJoAdM22KCxrU01-Zae1CEUoHUbDPlpOsYS9YfOi5hDxSFg',
+	'Authorization': 'Bearer BQBmoKZHhE0vPV0J2te_vK7co1wJrAg-6p-XC2jSM02fVfmaG8xbE4aJDTmNhQ477HzPrv3WIqMOtovGjJsvtPO6xQLr8k_QwvknumxmJkBv3wwkSyWaOKp-SO3g1Z0guADO3xRaAzXBJSz0Vg',
 }
 
 f = open("songIdLog.txt", "r")
@@ -17,10 +17,6 @@ f.close()
 response = requests.get("https://api.spotify.com/v1/tracks/" + str(mySong), headers=headers)
 
 # print(response.text)
-
-payload = open("payload.txt","w")
-payload.write(response.text)
-payload.close()
 
 @app.route('/')
 def index():
