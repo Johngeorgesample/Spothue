@@ -35,6 +35,8 @@ function(err, data) {
       document.getElementById('color-one').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-one xy: " + rgb_to_cie(r, g, b));
+      var colorOneX = rgb_to_cie(r, g, b)[0];
+      var colorOneY = rgb_to_cie(r, g, b)[1];
 
       var r = colorThief.getPalette(img, 4)[1][0];
       var g = colorThief.getPalette(img, 4)[1][1];
@@ -56,15 +58,26 @@ function(err, data) {
       document.getElementById('color-four').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-four xy: " + rgb_to_cie(r, g, b));
-     
+      setLamp(colorOneX, colorOneY);
     };
     img.crossOrigin = 'Anonymous';
     img.src = document.getElementById('myImg').src;
   }
 });
 
-function setLamp() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', "192.168.1.181/api/dNREFp86Y2mbL06YSvRid-cW7yPflV2Y2trx5s9q/lights", true);
-  xhr.send();
+
+function setLamp(x,y) {
+  var myX = Number(x);
+  var myY = Number(y);
+  var URL = "http://BridgeIpAddress/api/dNREFp86Y2mbL06YSvRid-cW7yPflV2Y2trx5s9q/lights/5/state";
+  var dataObject = {"on":true, "sat":254, "bri":254,"xy":[myX,myY]}
+  console.log(JSON.stringify(dataObject));
+  console.log(dataObject);
+
+  $.ajax({
+      url: URL,
+      type: 'PUT',    
+      data: JSON.stringify(dataObject),
+      contentType: 'application/json',
+  });
 }
