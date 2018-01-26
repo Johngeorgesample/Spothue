@@ -38,12 +38,18 @@ function(err, data) {
       var colorOneX = rgb_to_cie(r, g, b)[0];
       var colorOneY = rgb_to_cie(r, g, b)[1];
 
+      //---
+
       var r = colorThief.getPalette(img, 4)[1][0];
       var g = colorThief.getPalette(img, 4)[1][1];
       var b = colorThief.getPalette(img, 4)[1][2];
       document.getElementById('color-two').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-two xy: " + rgb_to_cie(r, g, b));
+      var colorTwoX = rgb_to_cie(r, g, b)[0];
+      var colorTwoY = rgb_to_cie(r, g, b)[1];
+
+      //---
 
       var r = colorThief.getPalette(img, 4)[2][0];
       var g = colorThief.getPalette(img, 4)[2][1];
@@ -51,6 +57,10 @@ function(err, data) {
       document.getElementById('color-three').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-three xy: " + rgb_to_cie(r, g, b));
+      var colorThreeX = rgb_to_cie(r, g, b)[0];
+      var colorThreeY = rgb_to_cie(r, g, b)[1];
+
+      //---
 
       var r = colorThief.getPalette(img, 4)[3][0];
       var g = colorThief.getPalette(img, 4)[3][1];
@@ -58,7 +68,16 @@ function(err, data) {
       document.getElementById('color-four').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-four xy: " + rgb_to_cie(r, g, b));
-      setLamp(colorOneX, colorOneY);
+      var colorFourX = rgb_to_cie(r, g, b)[0];
+      var colorFourY = rgb_to_cie(r, g, b)[1];
+
+      //---
+      
+      setLamp(colorOneX, colorOneY, 1);
+      setLamp(colorTwoX, colorTwoY, 3);
+      setLamp(colorThreeX, colorThreeY, 4);
+      setLamp(colorFourX, colorFourY, 5);
+
     };
     img.crossOrigin = 'Anonymous';
     img.src = document.getElementById('myImg').src;
@@ -66,10 +85,10 @@ function(err, data) {
 });
 
 
-function setLamp(x,y) {
+function setLamp(x,y, lightNumber) {
   var myX = Number(x);
   var myY = Number(y);
-  var URL = "http://BridgeIpAddress/api/dNREFp86Y2mbL06YSvRid-cW7yPflV2Y2trx5s9q/lights/5/state";
+  var URL = "http://BridgeIpAddress/api/BridgeID/lights/" + lightNumber + "/state";
   var dataObject = {"on":true, "sat":254, "bri":254,"xy":[myX,myY]}
   console.log(JSON.stringify(dataObject));
   console.log(dataObject);
