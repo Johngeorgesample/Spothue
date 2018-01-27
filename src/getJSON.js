@@ -74,9 +74,9 @@ function(err, data) {
       //---
       
       setLamp(colorOneX, colorOneY, 1);
-      setLamp(colorTwoX, colorTwoY, 3);
-      setLamp(colorThreeX, colorThreeY, 4);
-      setLamp(colorFourX, colorFourY, 5);
+      setLamp(colorOneX, colorOneY, 3);
+      setLamp(colorTwoX, colorTwoY, 4);
+      setLamp(colorTwoX, colorTwoY, 5);
 
     };
     img.crossOrigin = 'Anonymous';
@@ -88,10 +88,11 @@ function(err, data) {
 function setLamp(x,y, lightNumber) {
   var myX = Number(x);
   var myY = Number(y);
-  var URL = "http://BridgeIpAddress/api/BridgeID/lights/" + lightNumber + "/state";
+  var hubIP = "";
+  var username = "";
+  var URL = "http://" + hubIP + "/api/" + username + "/lights/" + lightNumber + "/state";
   var dataObject = {"on":true, "sat":254, "bri":254,"xy":[myX,myY]}
   console.log(JSON.stringify(dataObject));
-  console.log(dataObject);
 
   $.ajax({
       url: URL,
