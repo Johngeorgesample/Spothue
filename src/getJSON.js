@@ -84,7 +84,6 @@ function(err, data) {
   }
 });
 
-
 function setLamp(x,y, lightNumber) {
   var myX = Number(x);
   var myY = Number(y);

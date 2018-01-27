@@ -17,8 +17,11 @@ $ pip install Flask
 
 1. Change textFile path in `createLog.applescript` to your preferred location
 2. Generate temporary bearer token [from Spotify's API console](https://developer.spotify.com/web-api/console/get-track/) and add it to headers in `curlRequest.py`
-3. Run the `scriptRunner.sh` script to generate song ID, receive JSON payload, and start flask server
-4. Open `coverArt.html` to see current song's album art with 4 most dominant colors
+3. Add Hue Bridge IP address and Bridge username to `script.js`
+4. Run the `scriptRunner.sh` script to generate song ID, receive JSON payload, and start flask server
+5. Open `coverArt.html`
+
+Your lights should now match the album art's two most dominant colors. To generate new colors, close the Flask server and start at step 4.
 
 ## License
 
