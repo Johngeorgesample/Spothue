@@ -26,12 +26,13 @@ function(err, data) {
     var img = new Image();
     img.onload = function () {
       var colorThief = new ColorThief();
-      console.log(colorThief.getPalette(img, 4)); //4 = number of colors to return
+      var numberOfColors = 4;
+      console.log(colorThief.getPalette(img, numberOfColors));
 
       //---
-      var r = colorThief.getPalette(img, 4)[0][0];
-      var g = colorThief.getPalette(img, 4)[0][1];
-      var b = colorThief.getPalette(img, 4)[0][2];
+      var r = colorThief.getPalette(img, numberOfColors)[0][0];
+      var g = colorThief.getPalette(img, numberOfColors)[0][1];
+      var b = colorThief.getPalette(img, numberOfColors)[0][2];
       document.getElementById('color-one').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-one xy: " + rgb_to_cie(r, g, b));
@@ -40,9 +41,9 @@ function(err, data) {
 
       //---
 
-      var r = colorThief.getPalette(img, 4)[1][0];
-      var g = colorThief.getPalette(img, 4)[1][1];
-      var b = colorThief.getPalette(img, 4)[1][2];
+      var r = colorThief.getPalette(img, numberOfColors)[1][0];
+      var g = colorThief.getPalette(img, numberOfColors)[1][1];
+      var b = colorThief.getPalette(img, numberOfColors)[1][2];
       document.getElementById('color-two').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-two xy: " + rgb_to_cie(r, g, b));
@@ -51,9 +52,9 @@ function(err, data) {
 
       //---
 
-      var r = colorThief.getPalette(img, 4)[2][0];
-      var g = colorThief.getPalette(img, 4)[2][1];
-      var b = colorThief.getPalette(img, 4)[2][2];
+      var r = colorThief.getPalette(img, numberOfColors)[2][0];
+      var g = colorThief.getPalette(img, numberOfColors)[2][1];
+      var b = colorThief.getPalette(img, numberOfColors)[2][2];
       document.getElementById('color-three').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-three xy: " + rgb_to_cie(r, g, b));
@@ -62,9 +63,9 @@ function(err, data) {
 
       //---
 
-      var r = colorThief.getPalette(img, 4)[3][0];
-      var g = colorThief.getPalette(img, 4)[3][1];
-      var b = colorThief.getPalette(img, 4)[3][2];
+      var r = colorThief.getPalette(img, numberOfColors)[3][0];
+      var g = colorThief.getPalette(img, numberOfColors)[3][1];
+      var b = colorThief.getPalette(img, numberOfColors)[3][2];
       document.getElementById('color-four').style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
       console.log("color-four xy: " + rgb_to_cie(r, g, b));
@@ -77,7 +78,6 @@ function(err, data) {
       setLamp(colorOneX, colorOneY, 3);
       setLamp(colorTwoX, colorTwoY, 4);
       setLamp(colorTwoX, colorTwoY, 5);
-
     };
     img.crossOrigin = 'Anonymous';
     img.src = document.getElementById('myImg').src;
